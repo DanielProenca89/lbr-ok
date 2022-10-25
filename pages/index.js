@@ -149,7 +149,7 @@ useEffect(()=> {if(target != "") scrollIntoView({alignment:'start'})})
 </Grid.Col>
 <Grid.Col span={1}>
 <Text weight={'light'} size='lg' color={'#ffffffa1'} >Fale Conosco</Text>
-<a href="https://api.whatsapp.com/send/?phone=24981521714&text=Olá! Quero saber mais&type=phone_number&app_absent=0"><WhatsappIcon size={50} style={{marginRight:'10px'}}></WhatsappIcon></a>
+<a href="https://api.whatsapp.com/send/?phone=+5524988251622&text=Olá! Quero saber mais&type=phone_number&app_absent=0"><WhatsappIcon size={50} style={{marginRight:'10px'}}></WhatsappIcon></a>
 <EmailIcon style = {{cursor:'pointer'}} size={50} onClick={()=>setOpenedForm(true)}/>
 
 </Grid.Col>
