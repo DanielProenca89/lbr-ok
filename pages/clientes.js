@@ -1,5 +1,5 @@
-import {Box, Grid, Text, Image, Button, Badge } from '@mantine/core';
-import { createStyles } from '@mantine/core';
+import {createStyles, Grid, Text, Image, Button, Badge, Carousel, Box } from '@mantine/core';
+import Autoplay from 'embla-carousel-autoplay';
 
 
 

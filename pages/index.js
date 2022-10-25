@@ -7,6 +7,7 @@ import TextPage from './content';
 import Servicos from './servicos';
 import Clientes from './clientes';
 import Empresa from './empresa';
+import EmailForm from './email';
 import {
   FacebookIcon,
   WhatsappIcon,
@@ -17,6 +18,8 @@ import {
 export default function Home(){
 
   const [opened, setOpened] = useState(false);
+  
+  const [openedForm, setOpenedForm] = useState(false);
 
   const { scrollIntoView, targetRef } = useScrollIntoView({onScrollFinish:()=>setTarget(""),offset: 60 });
   const [page, setPage] = useState("home")
@@ -29,10 +32,10 @@ export default function Home(){
   useEffect(()=>{
 
   
-    if(scroll.y > 0 && scroll.y < 1125) setPage("home");
+    if(scroll.y >= 0 && scroll.y < 1125) setPage("home");
     if(scroll.y >= 1125 && scroll.y < 2612) setPage("servicos");
-    if(scroll.y >= 2612) setPage("clientes");
-    if(scroll.y >= 3000) setPage("empresa");
+    if(scroll.y >= 1500) setPage("clientes");
+    if(scroll.y >= 2500) setPage("empresa");
     
 
   })
@@ -146,11 +149,13 @@ useEffect(()=> {if(target != "") scrollIntoView({alignment:'start'})})
 </Grid.Col>
 <Grid.Col span={1}>
 <Text weight={'light'} size='lg' color={'#ffffffa1'} >Fale Conosco</Text>
-<WhatsappIcon size={50} style={{marginRight:'10px'}}></WhatsappIcon>
-<EmailIcon size={50}/>
+<a href="https://api.whatsapp.com/send/?phone=24981521714&text=Olá! Quero saber mais&type=phone_number&app_absent=0"><WhatsappIcon size={50} style={{marginRight:'10px'}}></WhatsappIcon></a>
+<EmailIcon style = {{cursor:'pointer'}} size={50} onClick={()=>setOpenedForm(true)}/>
 
 </Grid.Col>
+
 </Grid>
+<EmailForm openedForm= {openedForm} setOpenedForm={setOpenedForm}/>
 </footer>
 </AppShell>
 
