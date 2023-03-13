@@ -1,1 +1,1 @@
-Site de cliente: site.lbrtelecom.com.br
+*Site de cliente:* https://site.lbrtelecom.com.br
